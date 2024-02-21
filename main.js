@@ -24,7 +24,7 @@ const render = () => {
     </div>
     <div class="col-lg-8">
         <h2>${news.title}</h2>
-        <p>${news.description ? news.description.substring(0,100) : '내용없음'}</p>
+        <p>${news.description ? news.description.substring(0,100) : '내용없음'}...</p>
         <div>${news.source.name ? news.source.name : 'no source'} * ${moment(news.publishedAt).fromNow()}</div>
     </div>
 </div>`).join('');
