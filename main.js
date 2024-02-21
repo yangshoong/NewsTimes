@@ -3,8 +3,9 @@ let newsList = [];
 
 const getLatestNews = async () => {
     let url = new URL(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=099d71dcaa30404d9ad3afb751957330`
+        `https://newstimes-ost.netlify.app/top-headlines?country=us&apiKey=${API_KEY}`
     );
+}
 
     const response = await fetch(url);
     const data = await response.json();
