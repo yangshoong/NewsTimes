@@ -24,73 +24,58 @@
 
           <form class="d-flex" role="search">
             <input
-              class=" collapse form-control me-2"
+              class="collapse form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
               id="search-input"
             />
-            <button class="collapse btn btn-outline-success" style="margin-right: 10px;" type="submit" id="search-button">
+            <button
+              class="collapse btn btn-outline-success"
+              style="margin-right: 10px"
+              type="submit"
+              id="search-button"
+              onclick="getNewsByKeyword();"
+            >
               Search
             </button>
           </form>
 
           <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-        
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sport</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Tech</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">World</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Finance</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Politics</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Business</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Economics</a>
+              <a class="nav-link" href="#">Entertainment</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Beauty</a>
+              <a class="nav-link" href="#">General</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Travel</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Music</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Food</a>
+              <a class="nav-link" href="#">Health</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Science</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Gaming</a>
+              <a class="nav-link" href="#">Sports</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Energy</a>
+              <a class="nav-link" href="#">Technology</a>
             </li>
           </ul>
         </div>
@@ -105,20 +90,13 @@
         </svg>
       </div>
       <div class="menus">
-        <button>Sport</button>
-        <button>Tech</button>
-        <button>World</button>
-        <button>Finance</button>
-        <button>Politics</button>
         <button>Business</button>
-        <button>Economics</button>
-        <button>Beauty</button>
-        <button>Travel</button>
-        <button>Music</button>
-        <button>Food</button>
+        <button>Entertainment</button>
+        <button>General</button>
+        <button>Health</button>
         <button>Science</button>
-        <button>Gaming</button>
-        <button>Energy</button>
+        <button>Sports</button>
+        <button>Technology</button>
       </div>
     </section>
     <section id="news-board">
