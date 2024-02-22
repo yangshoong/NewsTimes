@@ -33,13 +33,14 @@
 }
 
 .d-flex {
-      display: none;
-    }
+    display: none;
+}
 
 .search-container {
     display: flex;
-    align-items: center; /* This will vertically center the search-icon with the form */
-  }
+    align-items: center;
+    /* This will vertically center the search-icon with the form */
+}
 
 .menus button {
     border: none;
@@ -58,4 +59,8 @@
 
 .news {
     border-bottom: 2px solid black;
+}
+
+#search-icon:hover {
+    cursor: pointer;
 }
