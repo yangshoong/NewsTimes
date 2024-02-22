@@ -41,12 +41,7 @@ function getNewsByCategory(event) {
 
 function getNewsByKeyword() {
     const keyword = document.getElementById("search-input").value.trim();
-    if (keyword) {
-        getNews(`top-headlines?country=us&q=${keyword}`);
-    } else {
-        getNews(`top-headlines?country=us`);
-    }
-
+    getNews(`top-headlines?country=us&q=${keyword}`);
 }
 
 function render() {
