@@ -8,7 +8,7 @@ let searchButton = document.getElementById("search-button");
 
 const getLatestNews = async () => {
     let url = new URL(
-        `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
+        `https://newstimes-ost.netlify.app/top-headlines?country=us&apiKey=${API_KEY}`
     );
 
 
