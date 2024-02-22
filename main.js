@@ -1,9 +1,12 @@
 const API_KEY = '099d71dcaa30404d9ad3afb751957330'
 let newsList = [];
 
+
+
+
 const getLatestNews = async () => {
     let url = new URL(
-        `https://newstimes-ost.netlify.app/top-headlines?country=us&apiKey=${API_KEY}`
+        `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
     );
 
 

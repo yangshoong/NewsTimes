@@ -20,6 +20,27 @@
     border-bottom: 4px double black;
 }
 
+@media (max-width: 768px) {
+    .menus {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        display: none;
+    }
+}
+
+.d-flex {
+      display: none;
+    }
+
+.search-container {
+    display: flex;
+    align-items: center; /* This will vertically center the search-icon with the form */
+  }
+
 .menus button {
     border: none;
     background: none;
