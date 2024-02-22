@@ -1,7 +1,6 @@
 const API_KEY = '099d71dcaa30404d9ad3afb751957330';
 let newsList = [];
 const newsFrom = 'top-headlines?country=us'
-let currentCategory = ''
 
 document.addEventListener('DOMContentLoaded', function () {
     const searchIcon = document.getElementById("search-icon");
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 async function getNews(endpoint) {
-    const url = `https://newsapi.org/v2/${endpoint}&apiKey=${API_KEY}`;
+    const url = `https://newstimes-ost.netlify.app/${endpoint}&apiKey=${API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
     newsList = data.articles;
@@ -37,17 +36,17 @@ async function getNews(endpoint) {
 }
 
 function getNewsByCategory(event) {
-    currentCategory = `&category=${event.target.textContent.toLowerCase()}`;
-    getNews(`${newsFrom}${currentCategory}`);
+    const category = `&category=${event.target.textContent.toLowerCase()}`;
+    getNews(`${newsFrom}${category}`);
     render();
 }
 
 function getNewsByKeyword() {
     const keyword = `&q=${document.getElementById("search-input").value.trim()}`;
     if (keyword) {
-        getNews(`${newsFrom}${currentCategory}${keyword}`);
+        getNews(`${newsFrom}${keyword}`);
     } else {
-        getNews(`${newsFrom}${currentCategory}`);
+        getNews(`${newsFrom}`);
     }
     render();
 }
