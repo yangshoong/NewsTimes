@@ -32,7 +32,7 @@ async function getNews(endpoint) {
         const response = await fetch(url);
         const data = await response.json();
         if (response.status === 200) {
-            if(data.articles.length===0){
+            if (data.articles.length === 0) {
                 throw new Error("No matches for your search")
             }
             newsList = data.articles;
@@ -62,13 +62,16 @@ function getNewsByKeyword() {
 function render() {
     const newsHTML = newsList.map(news => `
         <div class="row news">
+            <div class="col-lg-2">
+                <div class="moment">${moment(news.publishedAt).fromNow()}</div>
+            </div>
+            <div class="col-lg-6">
+                <h4 class="news-title">${news.title}</h4>
+                <p>${news.description ? news.description.substring(0, 200) : 'No description available'}...</p>
+                <div>${news.source.name ? news.source.name : 'No source'}</div>
+            </div>
             <div class="col-lg-4">
                 <img class="news-img-size" src="${news.urlToImage ? news.urlToImage : 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg'}" alt="news image">
-            </div>
-            <div class="col-lg-8">
-                <h2>${news.title}</h2>
-                <p>${news.description ? news.description.substring(0, 100) : 'No description available'}...</p>
-                <div>${news.source.name ? news.source.name : 'No source'} - ${moment(news.publishedAt).fromNow()}</div>
             </div>
         </div>
     `).join('');
@@ -79,6 +82,6 @@ const errorRender = (errorMessage) => {
     const errorHTML = `<div class="alert alert-danger" role="alert">
     ${errorMessage}
   </div>`;
-  document.getElementById("news-board").innerHTML=errorHTML
+    document.getElementById("news-board").innerHTML = errorHTML
 }
 

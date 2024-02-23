@@ -13,9 +13,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <nav class="container navbar navbar-expand-md bg-body-tertiary">
       <div class="container-fluid">
         <div class="search-container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            style="margin-right: 15px"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
           <img
             src="https://uxwing.com/wp-content/themes/uxwing/download/user-interface/search-icon.png"
             style="max-width: 25px; margin-right: 10px"
@@ -36,18 +48,6 @@
             id="search-button"
           >
             Search
-          </button>
-
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
           </button>
         </div>
 
@@ -96,17 +96,8 @@
         <button>Technology</button>
       </div>
     </section>
-    <section id="news-board" >
-      <div class="row news">
-        <div class="col-lg-4">
-          <img class="news-img-size" src="#" />
-        </div>
-        <div class="col-lg-8">
-          <h2></h2>
-          <p></p>
-          <div></div>
-        </div>
-      </div>
+    <section class="container" id="news-board">
+      
     </section>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
