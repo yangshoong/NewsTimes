@@ -27,11 +27,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 async function getNews(endpoint) {
-    const url = `https://newstimes-ost.netlify.app/${endpoint}&apiKey=${API_KEY}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    newsList = data.articles;
-    render();
+    try {
+        const url = `https://newstimes-ost.netlify.app/${endpoint}&apiKey=${API_KEY}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        if (response.status === 200) {
+            if(data.articles.length===0){
+                throw new Error("No matches for your search")
+            }
+            newsList = data.articles;
+            render();
+        } else {
+            throw new Error(data.message)
+        }
+    } catch (error) {
+        errorRender(error.message)
+    }
 }
 
 function getNewsByCategory(event) {
@@ -46,7 +57,6 @@ function getNewsByKeyword() {
     } else {
         getNews(`top-headlines?country=us`);
     }
-
 }
 
 function render() {
@@ -64,3 +74,11 @@ function render() {
     `).join('');
     document.getElementById("news-board").innerHTML = newsHTML;
 }
+
+const errorRender = (errorMessage) => {
+    const errorHTML = `<div class="alert alert-danger" role="alert">
+    ${errorMessage}
+  </div>`;
+  document.getElementById("news-board").innerHTML=errorHTML
+}
+
