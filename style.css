@@ -76,3 +76,10 @@
     margin-top: 20px;
     margin-left: 30px;
 }
+
+.container .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}

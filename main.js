@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 async function getNews(endpoint = 'top-headlines?country=us') {
     try {
-        const url = new URL(`https://newsapi.org/v2/${endpoint}&apiKey=${API_KEY}`);
+        const url = new URL(`https://newstimes-ost.netlify.app/${endpoint}&apiKey=${API_KEY}`);
         url.searchParams.set("page", page)
         url.searchParams.set("pageSize", pageSize);
         const response = await fetch(url);
