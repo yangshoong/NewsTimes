@@ -2,7 +2,7 @@ const API_KEY = '099d71dcaa30404d9ad3afb751957330';
 let newsList = [];
 let totalResults = 0
 let page = 1
-const pageSize = 10
+const pageSize = 3
 const groupSize = 5
 
 
@@ -101,20 +101,35 @@ const paginationRender = () => {
     const pageGroup = Math.ceil(page / groupSize);
     const totalPages = Math.ceil(totalResults / pageSize)
     let lastPage = pageGroup * groupSize;
+    const totalGroup = Math.ceil(totalPages / groupSize);
 
     if (lastPage > totalPages) {
         lastPage = totalPages;
     }
     const firstPage = lastPage - (groupSize - 1) <= 0 ? 1 : lastPage - (groupSize - 1);
 
-    let paginationHTML = `<li class="page-item"><a class="page-link" onclick="moveToPage(${page - 1})">Previous</a></li>`;
+    let paginationHTML = '';
+    if (pageGroup > 1) {
+        paginationHTML += `<li class="page-item"><a class="page-link" onclick="moveToPage(1)">
+    <span aria-hidden="true">&laquo;</span></li>`;
+
+        paginationHTML += `<li class="page-item"><a class="page-link" onclick="moveToPage(${page - 1})">&lt;</a></li>`;
+    }
+
 
     for (let i = firstPage; i <= lastPage; i++) {
         paginationHTML += `<li class="page-item ${i === page ? "active" : ""}" onclick="moveToPage(${i})"><a class="page-link">${i}</a></li>`;
     };
 
-    paginationHTML += `<li class="page-item"><a class="page-link" onclick="moveToPage(${page + 1})">Next</a></li>`;
+    if (pageGroup < totalGroup) {
+        paginationHTML += `<li class="page-item"><a class="page-link" onclick="moveToPage(${page + 1})">&gt;</a></li>`;
 
+        paginationHTML += `<li class="page-item">
+    <a class="page-link" onclick="moveToPage(${totalPages})">
+      <span aria-hidden="true">&raquo;</span>
+    </a>
+  </li>`;
+    }
     document.querySelector(".pagination").innerHTML = paginationHTML
 }
 
